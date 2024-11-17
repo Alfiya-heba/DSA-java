@@ -11,9 +11,8 @@ public class countdigits{
         }
         return cnt;
     }
-       
-        public static void main(String[] args){
-            countdigits c=new countdigits();
-            System.out.println(c.count(12345));
-        }
+    public static void main(String[] args) {
+        countdigits c=new countdigits();
+        System.out.println(c.count(1234));
     }
+}
