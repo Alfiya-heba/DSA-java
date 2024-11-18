@@ -1,7 +1,4 @@
-// Brute Force Approach//
-// TC--> O(N+N/2)
-// SC--> O(1)
-
+//Brute force solution//
 // class Node{
 //     int data;
 //     Node next;
@@ -14,9 +11,9 @@
 //         this.next=null;
 //     }
 // };
-// public class findMiddleElement{
+// public class middle{
 //     private static Node middleElement(Node head){
-//         if(head==null || head.next==null){ // Edge cases//
+//         if(head==null || head.next==null){
 //             return head;
 //         }
 //         Node temp=head;
@@ -31,24 +28,20 @@
 //             mid=mid-1;
 //             if(mid==0)
 //             break;
-//             temp=temp.next;   
+//             temp=temp.next;
 //         }
 //         return temp;
 //     }
-//     public static void main(String[] args){
-//         Node head=new Node(1);//creating nodes and adding the values
+//     public static void main(String[] args) {
+//         Node head=new Node(1);
 //         head.next=new Node(2);
 //         head.next.next=new Node(3);
 //         head.next.next.next=new Node(4);
-//         head.next.next.next.next=new Node(5);
 //         Node mid=middleElement(head);
-//         System.out.print("The middle element of the Linked List is:" +mid.data);
+//         System.out.print("The middle Element is:" + mid.data);
 //     }
-   
 // }
 
-
-//Optimal Solution//
 class Node{
     int data;
     Node next;
@@ -61,25 +54,24 @@ class Node{
         this.next=null;
     }
 };
-public class findMiddleElement{
+public class middle{
     private static Node middleElement(Node head){
-        if(head==null || head.next==null){
-            return head;
-        }
-        Node fast=head;
         Node slow=head;
+        Node fast=head;
         while(fast!=null && fast.next!=null){
             fast=fast.next.next;
             slow=slow.next;
         }
         return slow;
     }
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Node head=new Node(1);
         head.next=new Node(2);
         head.next.next=new Node(3);
         head.next.next.next=new Node(4);
+        head.next.next.next.next=new Node(5);
+        head.next.next.next.next.next=new Node(6);
         Node mid=middleElement(head);
-        System.out.print("The middle Element is:" + mid.data);
+        System.out.println("The middle element is:" +mid.data);
     }
 }
